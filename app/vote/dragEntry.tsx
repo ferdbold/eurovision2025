@@ -24,8 +24,8 @@ export default function DragEntry(props: IDragEntryProps) {
 				 className="mx-2 gap-2 rounded-xl bg-gradient-to-r from-pink-400 to-blue-800"
 				 style={style} {...listeners} {...attributes}>
 			<div className="flex flex-row gap-2 items-center m-1 pr-4 bg-gradient-to-r from-pink-600 to-blue-950 rounded-lg">
-				<div className="text-6xl text-center w-16 font-fancy font-bold">{props.position}</div>
-				<div className="grow leading-5">
+				<div className="text-6xl text-center w-16 font-fancy font-bold select-none">{props.position}</div>
+				<div className="grow leading-5 select-none">
 					<div className="text-3xl leading-7 font-fancy font-bold">{props.performance.performer}</div>
 					<div><strong>{props.performance.song}</strong>, <em>{props.performance.artist}</em></div>
 					<div><strong>{props.performance.country}</strong>, {props.performance.year}</div>

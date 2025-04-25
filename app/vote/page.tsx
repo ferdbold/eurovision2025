@@ -3,7 +3,7 @@
 import {useEffect, useState} from "react";
 import {verifySession} from "@/app/lib/session";
 import DragEntry from "@/app/vote/dragEntry";
-import {DndContext, DragEndEvent} from "@dnd-kit/core";
+import {DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensors} from "@dnd-kit/core";
 import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
 import {arrayMove, SortableContext, verticalListSortingStrategy} from "@dnd-kit/sortable";
 import {IPerformance} from "@/app/types";
@@ -103,6 +103,11 @@ export default function TelevisionView() {
 		},
 	]);
 
+	const sensors = useSensors(
+		useSensor(MouseSensor),
+		useSensor(TouchSensor),
+	);
+
 	useEffect(() => { fetchUserId() }, []);
 
 	async function fetchUserId() {
@@ -116,8 +121,8 @@ export default function TelevisionView() {
 				<h1 className="font-bold text-black">{userId}</h1>
 			</div>
 
-			<div className="flex flex-col gap-2 mt-2">
-				<DndContext onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis]}>
+			<div className="flex flex-col gap-2 mt-2 mr-8">
+				<DndContext onDragEnd={handleDragEnd} sensors={sensors} modifiers={[restrictToVerticalAxis]}>
 					<SortableContext items={performers} strategy={verticalListSortingStrategy}>
 						{performers.map((p, i) => <DragEntry key={p.id} position={i+1} performance={p}></DragEntry> )}
 					</SortableContext>
