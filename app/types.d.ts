@@ -1,8 +1,9 @@
-export interface IDragPerformer {
+export interface IPerformance {
 	id: number
-	name: string
+	performer: string
 	country: string
 	song: string
+	artist: string
 	year: number
-	image_url: string
+	image_urls: string[]
 }

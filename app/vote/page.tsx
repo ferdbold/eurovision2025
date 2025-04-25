@@ -6,35 +6,101 @@ import DragEntry from "@/app/vote/dragEntry";
 import {DndContext, DragEndEvent} from "@dnd-kit/core";
 import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
 import {arrayMove, SortableContext, verticalListSortingStrategy} from "@dnd-kit/sortable";
-import {IDragPerformer} from "@/app/types";
+import {IPerformance} from "@/app/types";
 
 export default function TelevisionView() {
 	const [userId, setUserId] = useState<string>('');
-	const [performers, setPerformers] = useState<IDragPerformer[]>([
+	const [performers, setPerformers] = useState<IPerformance[]>([
 		{
 			id: 1,
-			name: "Kitty",
-			song: "Song Name",
-			year: 1998,
-			country: "France",
-			image_url: "performers/kitty.png"
+			performer: "Mimi Fatale",
+			artist: "Dami Im",
+			song: "Sound of Silence",
+			country: "Australie",
+			year: 2016,
+			image_urls: ["performers/mimifatale.png"]
 		},
 		{
 			id: 2,
-			name: "Kelly Day",
-			song: "Song Name",
-			year: 1998,
-			country: "France",
-			image_url: "performers/kelly.png"
+			performer: "Kitty Catcher",
+			artist: "France Gall",
+			song: "Poupée de cire",
+			country: "Luxembourg",
+			year: 1965,
+			image_urls: ["performers/kitty.png"]
 		},
 		{
 			id: 3,
-			name: "Coco Nutz",
-			song: "Song Name",
-			year: 1998,
+			performer: "Coco Nutz",
+			artist: "Hera Björk",
+			song: "Je ne sais quoi",
+			country: "Islande",
+			year: 2010,
+			image_urls: ["performers/coco.png"]
+		},
+		{
+			id: 4,
+			performer: "Lady Monrose",
+			artist: "DQ",
+			song: "Drama Queen",
+			country: "Danemark",
+			year: 2007,
+			image_urls: ["performers/ladymonrose.png"]
+		},
+		{
+			id: 5,
+			performer: "Ella & Coco",
+			artist: "Lasha Tumbai",
+			song: "Dancing",
+			country: "Ukraine",
+			year: 2007,
+			image_urls: ["performers/coco.png", "performers/ella.png"],
+		},
+		{
+			id: 6,
+			performer: "Mimi Fatale",
+			artist: "Elena Tsagrinou",
+			song: "El Diablo",
+			country: "Chypre",
+			year: 2021,
+			image_urls: ["performers/mimifatale.png"]
+		},
+		{
+			id: 7,
+			performer: "Kitty Catcher",
+			artist: "Laureen",
+			song: "Tattoo",
+			country: "Suède",
+			year: 2023,
+			image_urls: ["performers/kitty.png"]
+		},
+		{
+			id: 8,
+			performer: "Ella Vale",
+			artist: "Céline Dion",
+			song: "Ne partez pas sans moi",
+			country: "Suisse",
+			year: 1988,
+			image_urls: ["performers/ella.png"]
+		},
+		{
+			id: 9,
+			performer: "Lady Monrose",
+			artist: "La Zarra",
+			song: "Évidemment",
 			country: "France",
-			image_url: "performers/coco.png"
-		}
+			year: 2023,
+			image_urls: ["performers/ladymonrose.png"]
+		},
+		{
+			id: 10,
+			performer: "Kelly D",
+			artist: "Conchita Wurst",
+			song: "Rise Like a Phoenix",
+			country: "Autriche",
+			year: 2014,
+			image_urls: ["performers/kelly.png"]
+		},
 	]);
 
 	useEffect(() => { fetchUserId() }, []);
@@ -53,7 +119,7 @@ export default function TelevisionView() {
 			<div className="flex flex-col gap-2 mt-2">
 				<DndContext onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis]}>
 					<SortableContext items={performers} strategy={verticalListSortingStrategy}>
-						{performers.map((p, i) => <DragEntry key={p.id} position={i+1} performer={p}></DragEntry> )}
+						{performers.map((p, i) => <DragEntry key={p.id} position={i+1} performance={p}></DragEntry> )}
 					</SortableContext>
 				</DndContext>
 			</div>
