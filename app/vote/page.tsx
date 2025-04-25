@@ -1,10 +1,29 @@
 'use client';
 
-import {verifySession} from "@/app/lib/session";
 import {useEffect, useState} from "react";
+import {verifySession} from "@/app/lib/session";
+import DragEntry from "@/app/vote/dragEntry";
+import {DndContext, DragEndEvent} from "@dnd-kit/core";
+import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
+import {arrayMove, SortableContext, verticalListSortingStrategy} from "@dnd-kit/sortable";
+import {IDragPerformer} from "@/app/types";
 
 export default function TelevisionView() {
 	const [userId, setUserId] = useState<string>('');
+	const [performers, setPerformers] = useState<IDragPerformer[]>([
+		{
+			id: 1,
+			name: "Drag 1"
+		},
+		{
+			id: 2,
+			name: "Drag 2"
+		},
+		{
+			id: 3,
+			name: "Drag 3"
+		}
+	]);
 
 	useEffect(() => { fetchUserId() }, []);
 
@@ -18,6 +37,29 @@ export default function TelevisionView() {
 			<div className="flex flex-row justify-center bg-blue-500 py-2">
 				<h1 className="font-bold text-black">{userId}</h1>
 			</div>
+
+			<div className="flex flex-col gap-2">
+				<DndContext onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis]}>
+					<SortableContext items={performers} strategy={verticalListSortingStrategy}>
+						{performers.map(p => <DragEntry key={p.id} performer={p}></DragEntry> )}
+					</SortableContext>
+				</DndContext>
+			</div>
 		</div>
 	);
+
+	function handleDragEnd(event: DragEndEvent) {
+		const {active, over} = event;
+
+		if (over === null)
+			return;
+
+		if (active.id !== over.id) {
+			setPerformers((items) => {
+				const oldIndex = items.findIndex(p => p.id === active.id);
+				const newIndex = items.findIndex(p => p.id === over.id)
+				return arrayMove(items, oldIndex, newIndex);
+			});
+		}
+	}
 }
