@@ -13,15 +13,27 @@ export default function TelevisionView() {
 	const [performers, setPerformers] = useState<IDragPerformer[]>([
 		{
 			id: 1,
-			name: "Drag 1"
+			name: "Kitty",
+			song: "Song Name",
+			year: 1998,
+			country: "France",
+			image_url: "performers/kitty.png"
 		},
 		{
 			id: 2,
-			name: "Drag 2"
+			name: "Kelly Day",
+			song: "Song Name",
+			year: 1998,
+			country: "France",
+			image_url: "performers/kelly.png"
 		},
 		{
 			id: 3,
-			name: "Drag 3"
+			name: "Coco Nutz",
+			song: "Song Name",
+			year: 1998,
+			country: "France",
+			image_url: "performers/coco.png"
 		}
 	]);
 
@@ -38,10 +50,10 @@ export default function TelevisionView() {
 				<h1 className="font-bold text-black">{userId}</h1>
 			</div>
 
-			<div className="flex flex-col gap-2">
+			<div className="flex flex-col gap-2 mt-2">
 				<DndContext onDragEnd={handleDragEnd} modifiers={[restrictToVerticalAxis]}>
 					<SortableContext items={performers} strategy={verticalListSortingStrategy}>
-						{performers.map(p => <DragEntry key={p.id} performer={p}></DragEntry> )}
+						{performers.map((p, i) => <DragEntry key={p.id} position={i+1} performer={p}></DragEntry> )}
 					</SortableContext>
 				</DndContext>
 			</div>
