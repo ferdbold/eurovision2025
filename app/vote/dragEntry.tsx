@@ -22,11 +22,11 @@ export default function DragEntry(props: IDragEntryProps) {
 	return (
 		<div ref={setNodeRef}
 				 className="mx-2 gap-2 rounded-xl bg-gradient-to-r from-pink-400 to-blue-800"
-				 style={style} {...listeners} {...attributes}>
-			<div className="flex flex-row items-center gap-1">
-				<div className="flex flex-row grow gap-0 items-center relative m-1 pr-2 py-2 bg-gradient-to-r from-pink-600 to-blue-950 rounded-lg rounded-tr-none rounded-br-none">
+				 style={style}>
+			<div className="flex flex-row items-stretch gap-1">
+				<div className="select-none flex flex-row grow gap-0 items-center relative m-1 pr-2 py-2 bg-gradient-to-r from-pink-600 to-blue-950 rounded-lg rounded-tr-none rounded-br-none">
 					<div className="text-5xl text-center w-16 font-fancy font-bold select-none">{props.position}</div>
-					<div className="grow leading-5 select-none z-10">
+					<div className="grow leading-5 z-10">
 						<div className="text-3xl leading-7 font-fancy font-bold">{props.performance.performer}</div>
 						<div><strong>{props.performance.song}</strong></div>
 						<div><em>{props.performance.artist}</em></div>
@@ -38,7 +38,9 @@ export default function DragEntry(props: IDragEntryProps) {
 						)}
 					</div>
 				</div>
-				<Bars3Icon className="size-6 mr-2"/>
+				<div className="flex items-center" {...listeners} {...attributes}>
+					<Bars3Icon className="size-6 mr-2" />
+				</div>
 			</div>
 		</div>
 	);
