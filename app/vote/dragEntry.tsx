@@ -32,9 +32,9 @@ export default function DragEntry(props: IDragEntryProps) {
 						<div><em>{props.performance.artist}</em></div>
 						<div><strong>{props.performance.country}</strong>, {props.performance.year}</div>
 					</div>
-					<div className="absolute flex w-full h-full justify-end gap-2 opacity-70">
+					<div className="absolute flex w-full h-full justify-end opacity-70">
 						{props.performance.image_urls.map((url, i) =>
-							<img key={`performer-img-${i}`} src={url} alt={props.performance.performer} className="max-w-32" />
+							<img key={`performer-img-${i}`} src={url} alt={props.performance.performer} className="max-w-32 -mr-12 last:mr-0" />
 						)}
 					</div>
 				</div>
