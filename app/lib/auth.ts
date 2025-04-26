@@ -6,13 +6,17 @@ import { redirect } from "next/navigation";
 import {createSession, deleteSession} from "@/app/lib/session";
 
 export async function signup(formData: FormData) {
-	let name = formData.get('name')?.toString() || 'Conchita';
+	let code = formData.get('code')?.toString().toUpperCase() || '';
 
-	const exists = await kv.hexists('voters', name);
-	if (exists === 0)
-		await kv.hset('voters', { [`${name}`]: { votes: [] } });
+	const codeExists = await kv.sismember('codes', code);
+	if (codeExists === 0)
+		redirect('/?error=Le code est invalide');
 
-	await createSession(name);
+	const voterExists = await kv.hexists('voters', code);
+	if (voterExists === 0)
+		await kv.hset('voters', { [`${code}`]: { votes: [] } });
+
+	await createSession(code);
 	redirect('/vote');
 }
 
