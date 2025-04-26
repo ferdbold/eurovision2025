@@ -54,7 +54,7 @@ export default function TelevisionView() {
 			song: "Dancing Lasha Tumbai",
 			country: "Ukraine",
 			year: 2007,
-			image_urls: ["performers/coco-sm.png", "performers/ella-sm.png"],
+			image_urls: ["performers/ella-sm.png", "performers/coco-sm.png"],
 		},
 		{
 			id: 6,
