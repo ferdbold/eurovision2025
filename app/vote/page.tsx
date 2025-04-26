@@ -18,7 +18,7 @@ export default function TelevisionView() {
 			song: "Sound of Silence",
 			country: "Australie",
 			year: 2016,
-			image_urls: ["performers/mimifatale.png"]
+			image_urls: ["performers/mimi-sm.png"]
 		},
 		{
 			id: 2,
@@ -27,7 +27,7 @@ export default function TelevisionView() {
 			song: "Poupée de cire",
 			country: "Luxembourg",
 			year: 1965,
-			image_urls: ["performers/kitty.png"]
+			image_urls: ["performers/kitty-sm.png"]
 		},
 		{
 			id: 3,
@@ -36,7 +36,7 @@ export default function TelevisionView() {
 			song: "Je ne sais quoi",
 			country: "Islande",
 			year: 2010,
-			image_urls: ["performers/coco.png"]
+			image_urls: ["performers/coco-sm.png"]
 		},
 		{
 			id: 4,
@@ -45,7 +45,7 @@ export default function TelevisionView() {
 			song: "Drama Queen",
 			country: "Danemark",
 			year: 2007,
-			image_urls: ["performers/ladymonrose.png"]
+			image_urls: ["performers/ladymonrose-sm.png"]
 		},
 		{
 			id: 5,
@@ -54,7 +54,7 @@ export default function TelevisionView() {
 			song: "Dancing",
 			country: "Ukraine",
 			year: 2007,
-			image_urls: ["performers/coco.png", "performers/ella.png"],
+			image_urls: ["performers/coco-sm.png", "performers/ella-sm.png"],
 		},
 		{
 			id: 6,
@@ -63,7 +63,7 @@ export default function TelevisionView() {
 			song: "El Diablo",
 			country: "Chypre",
 			year: 2021,
-			image_urls: ["performers/mimifatale.png"]
+			image_urls: ["performers/mimi-sm.png"]
 		},
 		{
 			id: 7,
@@ -72,7 +72,7 @@ export default function TelevisionView() {
 			song: "Tattoo",
 			country: "Suède",
 			year: 2023,
-			image_urls: ["performers/kitty.png"]
+			image_urls: ["performers/kitty-sm.png"]
 		},
 		{
 			id: 8,
@@ -81,7 +81,7 @@ export default function TelevisionView() {
 			song: "Ne partez pas sans moi",
 			country: "Suisse",
 			year: 1988,
-			image_urls: ["performers/ella.png"]
+			image_urls: ["performers/ella-sm.png"]
 		},
 		{
 			id: 9,
@@ -90,7 +90,7 @@ export default function TelevisionView() {
 			song: "Évidemment",
 			country: "France",
 			year: 2023,
-			image_urls: ["performers/ladymonrose.png"]
+			image_urls: ["performers/ladymonrose-sm.png"]
 		},
 		{
 			id: 10,
@@ -99,7 +99,7 @@ export default function TelevisionView() {
 			song: "Rise Like a Phoenix",
 			country: "Autriche",
 			year: 2014,
-			image_urls: ["performers/kelly.png"]
+			image_urls: ["performers/kelly-sm.png"]
 		},
 	]);
 
