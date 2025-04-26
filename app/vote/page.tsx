@@ -14,10 +14,10 @@ export default function TelevisionView() {
 		{
 			id: 1,
 			performer: "Mimi Fatale",
-			artist: "Dami Im",
-			song: "Sound of Silence",
-			country: "Australie",
-			year: 2016,
+			artist: "Blanche",
+			song: "City Lights",
+			country: "Belgique",
+			year: 2017,
 			image_urls: ["performers/mimi-sm.png"]
 		},
 		{
