@@ -50,8 +50,8 @@ export default function TelevisionView() {
 		{
 			id: 5,
 			performer: "Ella & Coco",
-			artist: "Lasha Tumbai",
-			song: "Dancing",
+			artist: "Verka Serduchka",
+			song: "Dancing Lasha Tumbai",
 			country: "Ukraine",
 			year: 2007,
 			image_urls: ["performers/coco-sm.png", "performers/ella-sm.png"],
