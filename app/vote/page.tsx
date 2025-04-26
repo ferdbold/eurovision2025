@@ -18,6 +18,7 @@ export default function TelevisionView() {
 			song: "City Lights",
 			country: "Belgique",
 			year: 2017,
+			flag_url: "flags/belgique.png",
 			image_urls: ["performers/mimi-sm.png"]
 		},
 		{
@@ -27,6 +28,7 @@ export default function TelevisionView() {
 			song: "Poupée de cire",
 			country: "Luxembourg",
 			year: 1965,
+			flag_url: "flags/luxembourg.png",
 			image_urls: ["performers/kitty-sm.png"]
 		},
 		{
@@ -36,6 +38,7 @@ export default function TelevisionView() {
 			song: "Je ne sais quoi",
 			country: "Islande",
 			year: 2010,
+			flag_url: "flags/islande.png",
 			image_urls: ["performers/coco-sm.png"]
 		},
 		{
@@ -45,6 +48,7 @@ export default function TelevisionView() {
 			song: "Drama Queen",
 			country: "Danemark",
 			year: 2007,
+			flag_url: "flags/danemark.png",
 			image_urls: ["performers/ladymonrose-sm.png"]
 		},
 		{
@@ -54,6 +58,7 @@ export default function TelevisionView() {
 			song: "Dancing Lasha Tumbai",
 			country: "Ukraine",
 			year: 2007,
+			flag_url: "flags/ukraine.png",
 			image_urls: ["performers/ella-sm.png", "performers/coco-sm.png"],
 		},
 		{
@@ -63,6 +68,7 @@ export default function TelevisionView() {
 			song: "El Diablo",
 			country: "Chypre",
 			year: 2021,
+			flag_url: "flags/chypre.png",
 			image_urls: ["performers/mimi-sm.png"]
 		},
 		{
@@ -72,6 +78,7 @@ export default function TelevisionView() {
 			song: "Tattoo",
 			country: "Suède",
 			year: 2023,
+			flag_url: "flags/suede.png",
 			image_urls: ["performers/kitty-sm.png"]
 		},
 		{
@@ -81,6 +88,7 @@ export default function TelevisionView() {
 			song: "Ne partez pas sans moi",
 			country: "Suisse",
 			year: 1988,
+			flag_url: "flags/suisse.png",
 			image_urls: ["performers/ella-sm.png"]
 		},
 		{
@@ -90,6 +98,7 @@ export default function TelevisionView() {
 			song: "Évidemment",
 			country: "France",
 			year: 2023,
+			flag_url: "flags/france.png",
 			image_urls: ["performers/ladymonrose-sm.png"]
 		},
 		{
@@ -99,6 +108,7 @@ export default function TelevisionView() {
 			song: "Rise Like a Phoenix",
 			country: "Autriche",
 			year: 2014,
+			flag_url: "flags/autriche.png",
 			image_urls: ["performers/kelly-sm.png"]
 		},
 	]);
