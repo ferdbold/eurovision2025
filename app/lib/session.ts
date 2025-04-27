@@ -1,4 +1,4 @@
-'use server';
+'use server'
 
 import 'server-only'
 import {SignJWT, jwtVerify, JWTPayload} from 'jose'
