@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import Pusher from 'pusher-js';
 import {loginAdmin} from "@/app/lib/auth";
 import Login from "@/app/admin/adminLogin";
@@ -43,7 +43,11 @@ export default function TelevisionView() {
 	}, [auth]);
 
 	if (!auth)
-		return <Login onSubmit={login}></Login>
+		return (
+			<Suspense>
+				<Login onSubmit={login}></Login>
+			</Suspense>
+		);
 
 	if (CurrentPerformance !== null)
 		return <PerformanceIntro performance={CurrentPerformance} />

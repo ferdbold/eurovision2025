@@ -1,7 +1,7 @@
 'use client'
 
 import {showIntro, showScoreboard} from "@/app/lib/actions";
-import {useState} from "react";
+import React, {Suspense, useState} from "react";
 import {loginAdmin} from "@/app/lib/auth";
 import Login from "@/app/admin/adminLogin";
 import {Button} from "@/app/ui/button";
@@ -16,7 +16,11 @@ export default function AdminView() {
 	}
 
 	if (!auth)
-		return <Login onSubmit={login}></Login>
+		return (
+			<Suspense>
+				<Login onSubmit={login}></Login>
+			</Suspense>
+		);
 
 	return (
 		<div className="w-full h-screen p-8 flex flex-col justify-center gap-8">
