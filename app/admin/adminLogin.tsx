@@ -12,10 +12,10 @@ export default function Login(props: ILoginProps) {
 		<div className="flex flex-col h-screen items-center justify-center gap-4">
 			{searchParams.has('error') && <div className="px-4 py-2 rounded bg-red-900 border border-red-500">{searchParams.get('error')}</div>}
 			<div className="rounded-lg border border-white/25 p-4">
-				<form action={props.onSubmit}>
+				<form action={props.onSubmit} className="flex flex-col items-center">
 					<div className="flex flex-col items-center py-2">
 						<label htmlFor="password">Mot de passe</label>
-						<input className="font-bold text-4xl text-center uppercase" type="password" id="password" name="password" size={4} maxLength={4} placeholder={"XXXX"} />
+						<input className="font-bold text-4xl text-center uppercase" type="password" id="password" name="password" size={8} maxLength={4} placeholder={"XXXX"} />
 					</div>
 					<Button type="submit">Soumettre</Button>
 				</form>

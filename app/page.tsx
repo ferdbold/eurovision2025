@@ -31,7 +31,7 @@ let Login = function() {
       <form action={signup} className="flex flex-col gap-2">
         <div className="flex flex-col items-center py-2">
           <label htmlFor="code">Entrez le code d'accès que vous avez reçu à l'entrée: </label>
-          <input className="font-bold text-4xl text-center uppercase" type="text" id="code" name="code" placeholder="XXXX" size={4} maxLength={4} />
+          <input className="font-bold text-4xl text-center uppercase" type="text" id="code" name="code" placeholder="XXXX" size={8} maxLength={4} />
         </div>
 
         <Button type="submit">Commencer</Button>
