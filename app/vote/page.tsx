@@ -7,111 +7,11 @@ import {DndContext, DragEndEvent, MouseSensor, TouchSensor, useSensor, useSensor
 import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
 import {arrayMove, SortableContext, verticalListSortingStrategy} from "@dnd-kit/sortable";
 import {IPerformance} from "@/app/types";
+import Performances from "@/app/lib/performances";
 
 export default function TelevisionView() {
 	const [userId, setUserId] = useState<string>('');
-	const [performers, setPerformers] = useState<IPerformance[]>([
-		{
-			id: 1,
-			performer: "Mimi Fatale",
-			artist: "Blanche",
-			song: "City Lights",
-			country: "Belgique",
-			year: 2017,
-			flag_url: "flags/belgique.png",
-			image_urls: ["performers/mimi-sm.png"]
-		},
-		{
-			id: 2,
-			performer: "Kitty Catcher",
-			artist: "France Gall",
-			song: "Poupée de cire",
-			country: "Luxembourg",
-			year: 1965,
-			flag_url: "flags/luxembourg.png",
-			image_urls: ["performers/kitty-sm.png"]
-		},
-		{
-			id: 3,
-			performer: "Coco Nutz",
-			artist: "Hera Björk",
-			song: "Je ne sais quoi",
-			country: "Islande",
-			year: 2010,
-			flag_url: "flags/islande.png",
-			image_urls: ["performers/coco-sm.png"]
-		},
-		{
-			id: 4,
-			performer: "Lady Monrose",
-			artist: "DQ",
-			song: "Drama Queen",
-			country: "Danemark",
-			year: 2007,
-			flag_url: "flags/danemark.png",
-			image_urls: ["performers/ladymonrose-sm.png"]
-		},
-		{
-			id: 5,
-			performer: "Ella & Coco",
-			artist: "Verka Serduchka",
-			song: "Dancing Lasha Tumbai",
-			country: "Ukraine",
-			year: 2007,
-			flag_url: "flags/ukraine.png",
-			image_urls: ["performers/ella-sm.png", "performers/coco-sm.png"],
-		},
-		{
-			id: 6,
-			performer: "Mimi Fatale",
-			artist: "Elena Tsagrinou",
-			song: "El Diablo",
-			country: "Chypre",
-			year: 2021,
-			flag_url: "flags/chypre.png",
-			image_urls: ["performers/mimi-sm.png"]
-		},
-		{
-			id: 7,
-			performer: "Kitty Catcher",
-			artist: "Laureen",
-			song: "Tattoo",
-			country: "Suède",
-			year: 2023,
-			flag_url: "flags/suede.png",
-			image_urls: ["performers/kitty-sm.png"]
-		},
-		{
-			id: 8,
-			performer: "Ella Vale",
-			artist: "Céline Dion",
-			song: "Ne partez pas sans moi",
-			country: "Suisse",
-			year: 1988,
-			flag_url: "flags/suisse.png",
-			image_urls: ["performers/ella-sm.png"]
-		},
-		{
-			id: 9,
-			performer: "Lady Monrose",
-			artist: "La Zarra",
-			song: "Évidemment",
-			country: "France",
-			year: 2023,
-			flag_url: "flags/france.png",
-			image_urls: ["performers/ladymonrose-sm.png"]
-		},
-		{
-			id: 10,
-			performer: "Kelly D",
-			artist: "Conchita Wurst",
-			song: "Rise Like a Phoenix",
-			country: "Autriche",
-			year: 2014,
-			flag_url: "flags/autriche.png",
-			image_urls: ["performers/kelly-sm.png"]
-		},
-	]);
+	const [performers, setPerformers] = useState<IPerformance[]>(Performances);
 
 	const sensors = useSensors(
 		useSensor(MouseSensor),

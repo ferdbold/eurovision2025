@@ -6,5 +6,6 @@ export interface IPerformance {
 	artist: string
 	year: number
 	flag_url: string
-	image_urls: string[]
+	small_drag_urls: string[]
+	full_drag_urls: string[]
 }
