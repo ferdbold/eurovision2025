@@ -127,11 +127,13 @@ export default function TelevisionView() {
 
 	return (
 		<div className="w-full h-screen flex flex-col">
-			<div className="flex flex-row justify-center bg-blue-500 py-2">
-				<h1 className="font-bold text-black">{userId}</h1>
+			<div className="flex flex-row justify-between items-center px-8">
+				<h1 className="text-xl font-fancy">En attendant l'<img className="inline-block mx-2 size-32 h-auto" src={"eurovision-logo.png"} alt={"Logo Eurovision"} /></h1>
+				<div className="text-2xl font-bold text-black text-white">{userId}</div>
 			</div>
+			<p className="my-2 text-xl font-bold text-center uppercase bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-blue-400">Réorganisez les queens pour former votre top 10!</p>
 
-			<div className="flex flex-col gap-2 mt-2">
+			<div className="flex flex-col gap-2 pb-8">
 				<DndContext onDragEnd={handleDragEnd} sensors={sensors} modifiers={[restrictToVerticalAxis]}>
 					<SortableContext items={performers} strategy={verticalListSortingStrategy}>
 						{performers.map((p, i) => <DragEntry key={p.id} position={i+1} performance={p}></DragEntry> )}
