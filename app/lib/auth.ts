@@ -20,6 +20,16 @@ export async function signup(formData: FormData) {
 	redirect('/vote');
 }
 
+export async function loginAdmin(formData: FormData) {
+	let password = formData.get('password')?.toString().toUpperCase() || '';
+
+	const valid = await kv.get("admin") === password;
+	if (!valid)
+		redirect('/admin?error=Le code est invalide');
+
+	return true;
+}
+
 export async function logout() {
 	await deleteSession();
 	redirect('/login');
