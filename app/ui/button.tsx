@@ -7,7 +7,7 @@ interface IButtonProps {
 }
 
 export const Button = function(props: IButtonProps) {
-	return <button type={props.type} className={`rounded p-1 bg-blue-900 hover:bg-blue-800 active:bg-blue-600 ${props.className || ''}`}>
+	return <button type={props.type} className={`font-bold text-xl uppercase rounded-xl p-4 border border-blue-700 shadow-md bg-blue-900 hover:bg-blue-800 active:bg-blue-600 ${props.className || ''}`}>
 		{props.children}
 	</button>
 }
