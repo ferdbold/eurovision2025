@@ -23,18 +23,18 @@ let Login = function() {
       <h1 className="font-fancy text-4xl text-center leading-none">En attendant</h1>
       <div className="flex items-center gap-2">
         <h1 className="font-fancy text-4xl text-center">l'</h1>
-        <img src={"eurovision-logo.png"} alt="Logo Eurovision" className="size-96 h-auto mx-auto -my-10" />
+        <img src={"eurovision-logo.png"} alt="Logo Eurovision" className="size-72 h-auto mx-auto -my-8" />
       </div>
     </header>
     {searchParams.has('error') && <div className="px-4 py-2 rounded bg-red-900 border border-red-500">{searchParams.get('error')}</div>}
-    <div className="rounded-lg border border-white/25 p-4">
+    <div className="rounded-lg border border-white/25 p-4 mx-4">
       <form action={signup} className="flex flex-col gap-2">
         <div className="flex flex-col items-center py-2">
-          <label htmlFor="code">Entrez le code d'accès que vous avez reçu à l'entrée: </label>
+          <label className="font-bold text-center text-xl" htmlFor="code">Entrez le code d'accès que vous avez reçu à l'entrée: </label>
           <input className="font-bold text-4xl text-center uppercase" type="text" id="code" name="code" placeholder="XXXX" size={8} maxLength={4} />
         </div>
 
-        <Button type="submit">Commencer</Button>
+        <Button type="submit">Showtime!</Button>
       </form>
     </div>
   </div>;
