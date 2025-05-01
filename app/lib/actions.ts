@@ -16,7 +16,7 @@ export async function showScoreboard() {
 	pusher.trigger('tv', 'show-scoreboard', {});
 }
 
-export async function showPerformance(id: number) {
+export async function showIntro(id: number) {
 	const pusher = getPusher();
 	pusher.trigger('tv', 'show-performance', {id: id});
 }
