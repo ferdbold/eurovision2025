@@ -6,6 +6,7 @@ import {loginAdmin} from "@/app/lib/auth";
 import Login from "@/app/admin/adminLogin";
 import Performances from "@/app/lib/performances";
 import {IPerformance} from "@/app/types";
+import Logo from "@/app/ui/logo";
 
 export default function TelevisionView() {
 	const [CurrentPerformance, setCurrentPerformance] = useState<IPerformance|null>(null);
@@ -55,12 +56,23 @@ export default function TelevisionView() {
 	if (ShowScoreboard)
 		return <div>Classement</div>;
 
+	return <Idle/>;
+}
+
+
+function Idle() {
 	return (
-		<div className="w-full h-screen flex flex-col items-center justify-center">
-			<h1>Vue télé</h1>
+		<div className="w-full h-screen bg-radial-[at_50%_100%] from-purple-800 from-5% to-rose-700">
+			<div className="w-full h-full grid grid-cols-2 justify-evenly place-items-center">
+				<Logo />
+				<Logo />
+				<Logo />
+				<Logo />
+			</div>
 		</div>
 	)
 }
+
 
 interface IPerformanceIntroProps {
 	performance: IPerformance;

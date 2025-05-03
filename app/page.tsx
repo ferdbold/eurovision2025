@@ -4,6 +4,7 @@ import {useSearchParams} from "next/navigation";
 import {Suspense} from "react";
 import {Button} from "@/app/ui/button";
 import {signup} from "@/app/lib/auth";
+import Logo from "@/app/ui/logo";
 
 export default function Home() {
   return (
@@ -19,13 +20,7 @@ let Login = function() {
   const searchParams = useSearchParams();
 
   return <div className="flex flex-col h-full items-center justify-center gap-4">
-    <header>
-      <h1 className="font-fancy text-4xl text-center leading-none">En attendant</h1>
-      <div className="flex items-center gap-2">
-        <h1 className="font-fancy text-4xl text-center">l'</h1>
-        <img src={"eurovision-logo.png"} alt="Logo Eurovision" className="size-72 h-auto mx-auto -my-8" />
-      </div>
-    </header>
+    <Logo/>
     {searchParams.has('error') && <div className="px-4 py-2 rounded bg-red-900 border border-red-500">{searchParams.get('error')}</div>}
     <div className="rounded-lg border border-white/25 p-4 mx-4">
       <form action={signup} className="flex flex-col gap-2">
