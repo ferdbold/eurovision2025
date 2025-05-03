@@ -30,5 +30,5 @@ export async function getVotes(userId: string) {
 }
 
 export async function submitVotes(userId: string, votes: number[]) {
-	await kv.hset('voters', { [`${userId}`]: { votes } });
+	await kv.hset('voters', { [`${userId}`]: { votes: votes } });
 }

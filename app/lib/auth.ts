@@ -14,7 +14,7 @@ export async function signup(formData: FormData) {
 
 	const voterExists = await kv.hexists('voters', code);
 	if (voterExists === 0)
-		await kv.hset('voters', { [`${code}`]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] });
+		await kv.hset('voters', { [`${code}`]: { votes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] } });
 
 	await createSession(code);
 	redirect('/vote');
