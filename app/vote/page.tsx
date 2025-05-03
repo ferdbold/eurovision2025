@@ -8,10 +8,11 @@ import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
 import {arrayMove, SortableContext, verticalListSortingStrategy} from "@dnd-kit/sortable";
 import {IPerformance} from "@/app/types";
 import Performances from "@/app/lib/performances";
+import {getVotes, submitVotes} from "@/app/lib/actions";
 
 export default function TelevisionView() {
 	const [userId, setUserId] = useState<string>('');
-	const [performers, setPerformers] = useState<IPerformance[]>(Performances);
+	const [performers, setPerformers] = useState<IPerformance[]>([]);
 
 	const sensors = useSensors(
 		useSensor(MouseSensor),
@@ -19,6 +20,42 @@ export default function TelevisionView() {
 	);
 
 	useEffect(() => { fetchUserId() }, []);
+
+	// Restore votes upon getting userId
+	useEffect(() => {
+		if (!userId)
+			return;
+
+		console.log(`Restoring votes for user ${userId}...`);
+		getVotes(userId).then(votes => {
+			console.log(votes);
+			if (!votes)
+				return;
+
+			const source = Performances;
+			let performers:IPerformance[] = [];
+			for (let i = 0; i < votes.length; i++)
+			{
+				let match = source.find(s => s.id === votes[i]);
+				if (match === undefined)
+					continue;
+
+				performers.push(match);
+			}
+			console.log("Setting initial performers...");
+			setPerformers(performers);
+		});
+	}, [userId]);
+
+	// Submit votes on every reorder
+	useEffect(() => {
+		if (performers === null || performers.length === 0)
+			return;
+
+		const ids = performers.map(p => p.id);
+		console.log("Submitting votes...");
+		submitVotes(userId, ids);
+	}, [performers]);
 
 	async function fetchUserId() {
 		let content = await verifySession();

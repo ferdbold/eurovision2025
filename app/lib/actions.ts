@@ -1,5 +1,7 @@
 'use server'
 
+import {kv} from "@vercel/kv";
+
 function getPusher(): typeof Pusher {
 	const Pusher = require("pusher");
 	return new Pusher({
@@ -19,4 +21,14 @@ export async function showScoreboard() {
 export async function showIntro(id: number) {
 	const pusher = getPusher();
 	pusher.trigger('tv', 'show-performance', {id: id});
+}
+
+export async function getVotes(userId: string) {
+	const userData = await kv.hget('voters', userId);
+	// @ts-ignore
+	return userData.votes;
+}
+
+export async function submitVotes(userId: string, votes: number[]) {
+	await kv.hset('voters', { [`${userId}`]: { votes } });
 }
