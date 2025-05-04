@@ -41,7 +41,10 @@ export default function AdminView() {
 					<Button onClick={() => showIntro(10)}>Intro Autriche Kelly</Button>
 				</div>
 			</div>
-			<Button onClick={showScoreboard}>Classement</Button>
+			<div className="flex flex-col w-full gap-2">
+				<Button onClick={showScoreboard}>Afficher classement</Button>
+				<Button onClick={showScoreboard}>Révéler classement</Button>
+			</div>
 		</div>
 	);
 }
