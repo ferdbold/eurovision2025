@@ -1,6 +1,6 @@
 'use client'
 
-import {showIntro, showScoreboard} from "@/app/lib/actions";
+import {showHome, showIntro, showScoreboard} from "@/app/lib/actions";
 import React, {Suspense, useState} from "react";
 import {loginAdmin} from "@/app/lib/auth";
 import Login from "@/app/admin/adminLogin";
@@ -24,6 +24,7 @@ export default function AdminView() {
 
 	return (
 		<div className="w-full h-screen p-8 flex flex-col justify-center gap-8">
+			<Button onClick={showHome}>Accueil</Button>
 			<div className="flex flex-row w-full items-stretch justify-stretch gap-2">
 				<div className="flex w-full flex-col gap-2 items-stretch">
 					<Button onClick={() => showIntro(1)}>Intro Belgique Mimi</Button>

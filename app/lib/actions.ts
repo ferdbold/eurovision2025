@@ -13,6 +13,11 @@ function getPusher(): typeof Pusher {
 	});
 }
 
+export async function showHome() {
+	const pusher = getPusher();
+	pusher.trigger('tv', 'show-home', {});
+}
+
 export async function showScoreboard() {
 	const pusher = getPusher();
 	pusher.trigger('tv', 'show-scoreboard', {});

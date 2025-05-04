@@ -1,5 +1,9 @@
-export default function Logo() {
-	return <div>
+interface ILogoProps {
+	className?: string;
+}
+
+export default function Logo(props: ILogoProps) {
+	return <div className={props.className}>
 		<h1 className="font-fancy text-4xl text-center leading-none">En attendant</h1>
 		<div className="flex items-center gap-2">
 			<h1 className="font-fancy text-4xl text-center">l'</h1>
