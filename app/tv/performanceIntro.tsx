@@ -20,7 +20,7 @@ export default function PerformanceIntro(props: IPerformanceIntroProps) {
 				})}
 			</div>
 			<div className="absolute w-full bottom-0 animate-fade-left animate-ease-out animate-delay-2000">
-				<p className="text-[120px] font-fancy mr-16 -mb-13 text-right">{props.performance.performer}</p>
+				<p className="text-shadow-lg text-shadow-black text-[120px] font-fancy mr-16 -mb-13 text-right">{props.performance.performer}</p>
 				<div className="bg-black/50 p-4">
 					<div className="flex flex-row w-full items-center justify-between px-14">
 						<div className="flex flex-row items-center gap-2">
