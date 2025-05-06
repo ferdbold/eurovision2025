@@ -30,6 +30,10 @@ export async function showIntro(id: number) {
 	pusher.trigger('tv', 'show-performance', {id: id});
 }
 
+export async function getCodes() {
+	return await kv.smembers('codes');
+}
+
 export async function getVotes(userId: string) {
 	const userData = await kv.hget('voters', userId);
 	// @ts-ignore
