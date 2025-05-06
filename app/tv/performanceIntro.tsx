@@ -10,7 +10,6 @@ export default function PerformanceIntro(props: IPerformanceIntroProps) {
 	return (
 		<div key={props.performance.id} className="w-screen h-screen relative bg-radial-[at_50%_100%] from-rose-700 from-5% to-purple-700/25 animate-fade">
 			<div className="relative flex h-full items-center justify-center animate-fade animate-delay-2500 animate-reverse">
-				<img className="absolute size-36 top-[478px] right-[850px] z-10" src={props.performance.flag_url} alt={props.performance.country} />
 				<Logo className="animate-ping animate-once animate-ease-in-out animate-reverse animate-duration-[800ms] scale-200" />
 			</div>
 			<p className="absolute top-16 left-16 font-fancy text-8xl animate-fade-right animate-ease-out">#{props.performance.id}</p>
