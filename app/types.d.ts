@@ -6,6 +6,7 @@ export interface IPerformance {
 	artist: string
 	year: number
 	flag_url: string
+	audio_url: string
 	small_drag_urls: string[]
 	full_drag_urls: string[]
 }

@@ -9,6 +9,9 @@ interface IPerformanceIntroProps {
 export default function PerformanceIntro(props: IPerformanceIntroProps) {
 	return (
 		<div key={props.performance.id} className="w-screen h-screen relative bg-radial-[at_50%_100%] from-rose-700 from-5% to-purple-700/25 animate-fade">
+			<audio autoPlay loop={false}>
+				<source src={props.performance.audio_url} type="audio/mp3" />
+			</audio>
 			<div className="relative flex h-full items-center justify-center animate-fade animate-delay-2500 animate-reverse">
 				<Logo className="animate-ping animate-once animate-ease-in-out animate-reverse animate-duration-[800ms] scale-200" />
 			</div>
