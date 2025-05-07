@@ -42,8 +42,18 @@ export default function AdminView() {
 				</div>
 			</div>
 			<div className="flex flex-col w-full gap-2">
-				<Button onClick={showScoreboard}>Afficher classement</Button>
-				<Button onClick={showScoreboard}>Révéler classement</Button>
+				<Button onClick={() => showScoreboard('')}>Afficher classement</Button>
+				<div className="flex flex-row w-full items-stretch justify-stretch gap-2">
+					<div className="flex w-full flex-col gap-2 items-stretch">
+						<Button onClick={() => showScoreboard('academy1')}>Académie #1</Button>
+						<Button onClick={() => showScoreboard('academy3')}>Académie #3</Button>
+					</div>
+					<div className="flex w-full flex-col gap-2 items-stretch">
+						<Button onClick={() => showScoreboard('academy2')}>Académie #2</Button>
+						<Button onClick={() => showScoreboard('academy4')}>Académie #4</Button>
+					</div>
+				</div>
+				<Button onClick={() => showScoreboard('public')}>Vote du public</Button>
 			</div>
 		</div>
 	);

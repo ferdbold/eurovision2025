@@ -12,7 +12,7 @@ import Scoreboard from "@/app/tv/scoreboard";
 
 export default function TelevisionView() {
 	const [CurrentPerformance, setCurrentPerformance] = useState<IPerformance|null>(null);
-	const [ShowScoreboard, setShowScoreboard] = useState<boolean>(false);
+	const [ScoreboardCode, setScoreboardCode] = useState<string|null>(null);
 	const [auth, setAuth] = useState<boolean>(false);
 
 	async function login(formData: FormData)
@@ -31,12 +31,12 @@ export default function TelevisionView() {
 
 		let channel = pusher.subscribe('tv');
 		channel.bind('show-home', () => {
-			setShowScoreboard(false);
+			setScoreboardCode(null);
 			setCurrentPerformance(null);
 		});
 
-		channel.bind('show-scoreboard', () => {
-			setShowScoreboard(true);
+		channel.bind('show-scoreboard', (data: any) => {
+			setScoreboardCode(data.code);
 			setCurrentPerformance(null);
 		});
 
@@ -44,7 +44,7 @@ export default function TelevisionView() {
 			const performance = Performances.find(p => p.id === data.id);
 			if (performance !== undefined)
 			{
-				setShowScoreboard(false);
+				setScoreboardCode(null);
 				setCurrentPerformance(performance);
 			}
 		});
@@ -60,8 +60,8 @@ export default function TelevisionView() {
 	if (CurrentPerformance !== null)
 		return <PerformanceIntro performance={CurrentPerformance} />
 
-	if (ShowScoreboard)
-		return <Scoreboard />;
+	if (ScoreboardCode !== null)
+		return <Scoreboard code={ScoreboardCode} />;
 
 	return <Idle/>;
 }

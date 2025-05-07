@@ -20,14 +20,14 @@ export async function showHome() {
 	pusher.trigger('tv', 'show-home', {});
 }
 
-export async function showScoreboard() {
+export async function showScoreboard(code: string) {
 	const pusher = getPusher();
-	pusher.trigger('tv', 'show-scoreboard', {});
+	pusher.trigger('tv', 'show-scoreboard', { code: code });
 }
 
 export async function showIntro(id: number) {
 	const pusher = getPusher();
-	pusher.trigger('tv', 'show-performance', {id: id});
+	pusher.trigger('tv', 'show-performance', { id: id });
 }
 
 export async function getCodes() {
