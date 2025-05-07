@@ -23,7 +23,7 @@ export default function AdminView() {
 		);
 
 	return (
-		<div className="w-full h-screen p-8 flex flex-col justify-center gap-8">
+		<div className="w-full p-8 flex flex-col justify-center gap-8">
 			<Button onClick={showHome}>Accueil</Button>
 			<div className="flex flex-row w-full items-stretch justify-stretch gap-2">
 				<div className="flex w-full flex-col gap-2 items-stretch">
