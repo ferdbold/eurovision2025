@@ -111,7 +111,7 @@ const Performances: IPerformance[] = [
 	},
 	{
 		id: 10,
-		performer: "Kelly D",
+		performer: "Kelly Day",
 		artist: "Conchita Wurst",
 		song: "Rise Like a Phoenix",
 		country: "Autriche",
