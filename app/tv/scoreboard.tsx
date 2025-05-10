@@ -131,7 +131,7 @@ export default function Scoreboard(props: IScoreboardProps) {
 			<header className="flex flex-col items-center py-4">
 				<Logo className="animate-fade-down animate-delay-500" />
 			</header>
-			<div className="w-128 mx-auto flex flex-col gap-4">
+			<div className="w-150 mx-auto flex flex-col gap-4">
 				{scoresToShow.map((s, i) => {
 					const perf = Performances.find(p => p.id === s.id);
 					if (perf === undefined)
@@ -153,11 +153,11 @@ interface IScoreboardEntryProps {
 
 function ScoreboardEntry(props: IScoreboardEntryProps) {
 	return (
-		<div className={`${props.className ?? ''} flex flex-row text-black text-2xl uppercase pr-2`}>
-			<img className="size-18 -my-3 -mr-8 z-10" src={props.performance.flag_url} alt={props.performance.country} />
-			<div className="bg-rose-400 pl-8 pr-2 py-2 w-20 text-white text-right font-bold">{`${props.position}`.padStart(2, '0')}</div>
-			<div className="flex-1 font-bold pl-2 py-2 bg-white">{props.performance.country}</div>
-			<div className="py-2 pr-2 font-bold text-rose-600 bg-white">{props.score}</div>
+		<div className={`${props.className ?? ''} flex flex-row text-black text-4xl uppercase pr-2`}>
+			<img className="size-20 -my-3 -mr-10 z-10" src={props.performance.flag_url} alt={props.performance.country} />
+			<div className="bg-rose-400 pl-12 pr-4 py-2 w-30 text-white text-right font-bold">{`${props.position}`.padStart(2, '0')}</div>
+			<div className="flex-1 font-bold pl-4 py-2 bg-white">{props.performance.country}</div>
+			<div className="py-2 pr-4 font-bold text-rose-600 bg-white">{props.score}</div>
 		</div>
 	)
 }
